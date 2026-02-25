@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Flow Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Sidebar Builder -->
+        <aside class="builder-panel no-print">
+            <header class="panel-header">
+                <h2>The Brooks  Service <br> Flow Builder</h2>
+                <div class="global-actions">
+                    <button id="export-pdf" class="btn primary">Export to PDF</button>
+                </div>
+            </header>
+
+            <form id="builder-form" class="scroll-area">
+                <section class="form-section">
+                    <h3>General Info</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Service Title</label>
+                            <input type="text" id="input-title" placeholder="e.g. THANKSGIVING SERVICE">
+                        </div>
+                        <div class="form-group">
+                            <label>Service Date</label>
+                            <input type="text" id="input-date" placeholder="e.g. FEBRUARY/15/2026">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Template</label>
+                        <select id="select-template">
+                            <option value="1">Sunday - Single Service</option>
+                            <option value="2">Sunday - Two Services</option>
+                            <option value="wed-p">Winning Edge - Physical</option>
+                            <option value="wed-v">Winning Edge - Virtual</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Start Time</label>
+                        <input type="text" id="input-start-time" placeholder="e.g. 9:00 am">
+                        <small>Sequenced flows will start from this time.</small>
+                    </div>
+                </section>
+
+                <section class="form-section">
+                    <div class="section-header">
+                        <h3>Service Items</h3>
+                        <button type="button" id="add-item" class="btn-text">+ Add Item</button>
+                    </div>
+                    <div id="items-container" class="items-list">
+                        <!-- Item forms will be injected here -->
+                    </div>
+                </section>
+
+                <section class="form-section no-print">
+                    <h3>Monthly Reference</h3>
+                    <div id="calendar-reference" class="calendar-preview">
+                        <!-- Calendar data will be injected here -->
+                    </div>
+                </section>
+
+                <section class="form-section no-print">
+                    <h3>Export History</h3>
+                    <div id="history-container" class="history-list">
+                        <p class="empty-state">No exported services yet.</p>
+                    </div>
+                </section>
+            </form>
+        </aside>
+
+        <!-- Document Preview -->
+        <main class="preview-panel">
+            <div id="flow-document" class="document-page">
+                <h2 id="preview-title" class="document-title">FEBRUARY/15/2026 FLOW</h2>
+                
+                <table id="preview-table">
+                    <tbody id="preview-body">
+                        <!-- Table rows will be synced here -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Templates -->
+    <template id="item-form-template">
+        <div class="item-form-card">
+            <div class="card-header">
+                <div class="header-left">
+                    <span class="item-index">Item 1</span>
+                    <div class="reorder-actions">
+                        <button type="button" class="move-up" title="Move Up">↑</button>
+                        <button type="button" class="move-down" title="Move Down">↓</button>
+                    </div>
+                </div>
+                <button type="button" class="remove-item">×</button>
+            </div>
+            <div class="item-fields">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Time</label>
+                        <input type="text" class="field-time" placeholder="9:00 am">
+                    </div>
+                    <div class="form-group">
+                        <label>Duration</label>
+                        <input type="text" class="field-duration" placeholder="25 Min">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Activity</label>
+                    <input type="text" class="field-activity" placeholder="Praise & Worship">
+                </div>
+                <div class="form-group">
+                    <label>Person / Owner (Optional)</label>
+                    <input type="text" class="field-owner" placeholder="MP">
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="main.js"></script>
+</body>
+</html>

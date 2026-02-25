@@ -1,0 +1,23 @@
+{
+  "name": "thebrooksagent",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "agent-browser": "^0.14.0",
+    "playwright": "^1.58.2"
+  },
+  "devDependencies": {
+    "vite": "^7.3.1"
+  }
+}
