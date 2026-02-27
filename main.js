@@ -27,6 +27,23 @@ const templates = {
             { duration: '', activity: 'Closing', owner: '' }
         ]
     },
+    'tg-1': {
+        title: 'FEBRUARY/01/2026 FLOW [Thanksgiving]',
+        startTime: '9:00 am',
+        items: [
+            { duration: '25 Min', activity: 'Y.I.C', owner: '' },
+            { duration: '5 Min', activity: 'Call To Worship', owner: 'MP' },
+            { duration: '15 Min', activity: 'Praise & Worship', owner: 'MP' },
+            { duration: '10 Min', activity: 'Congregational Prayer / Confession', owner: 'Onyin' },
+            { duration: '15 Min', activity: 'Testimony', owner: 'P.Shegs' },
+            { duration: '10 Min', activity: 'Shop For Free Info', owner: '' },
+            { duration: '10 Min', activity: 'Special Number', owner: 'M.P' },
+            { duration: '15 Min', activity: 'The Word', owner: '' },
+            { duration: '10 Min', activity: 'Thanksgiving', owner: 'MLA' },
+            { duration: '5 Min', activity: 'Welcome ⬇️⬇️⬇️ Offering', owner: 'PJ' },
+            { duration: '', activity: 'Closing', owner: '' }
+        ]
+    },
     'wed-p': {
         title: 'WINNING EDGE PHYSICAL FLOW',
         startTime: '6:30 pm',
@@ -275,6 +292,13 @@ inputStartTime.oninput = (e) => {
 
 selectTemplate.onchange = (e) => {
     const templateKey = e.target.value;
+    
+    if (!confirm('Changing the template will overwrite your current progress. Do you want to continue?')) {
+        // Reset the dropdown back to the current active template if cancelled
+        e.target.value = state.templateKey || '1';
+        return;
+    }
+    
     console.log('Template changed to:', templateKey);
     
     if (templates[templateKey]) {
