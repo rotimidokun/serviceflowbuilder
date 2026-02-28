@@ -1,0 +1,22 @@
+{
+    "months": [
+        {
+            "name": "March 2026",
+            "theme": "EL-Roi",
+            "text": "Gen. 16:13",
+            "sundays": [
+                { "date": "1st", "topic": "Praise Turn Up" },
+                { "date": "8th", "topic": "The Revealer" },
+                { "date": "15th", "topic": "FHI: The Battle of Sights" },
+                { "date": "22nd", "topic": "FHI: The Battle of Sights" },
+                { "date": "29th", "topic": "FHI: The Battle of Sights" }
+            ],
+            "wednesdays": [
+                { "date": "4th", "topic": "Power Night" },
+                { "date": "11th", "topic": "PShegz" },
+                { "date": "18th", "topic": "Obakore" },
+                { "date": "25th", "topic": "Senator Apos" }
+            ]
+        }
+    ]
+}
